@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ page.title }}</title>
+</head>
+<body>
+  <header role="banner" class="site-head">
+    <div class="wrapper">
+      <p>Andy’s Micro Blog</p>
+      {% if navigation.items %}
+        <nav class="nav">
+          <ul>
+            {% for item in navigation.items %}
+              {% set relAttribute = '' %}
+              {% set currentAttribute = '' %}
+
+              {% if item.rel %}
+                {% set relAttribute = ' rel="' + item.rel + '"' %}
+              {% endif %}
+
+              {% if page.url == item.url %}
+                {% set currentAttribute = ' aria-current="page"' %}
+              {% endif %}
+
+              <li>
+                <a href="{{ item.url }}"{{ relAttribute | safe }}{{ currentAttribute | safe }}>{{ item.text }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      {% endif %}
+    </div>
+  </header>
+  <main class="wrapper">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+<article>
+  <h1 class="font-base leading-tight text-600 weight-mid">
+    <a href="{{ url }}" class="post-list__link" rel="bookmark">{{ title | dateFilter }}</a>
+  </h1>
+  {{ content | safe }}
+</article>
+{% endblock %}
