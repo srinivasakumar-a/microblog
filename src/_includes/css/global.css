@@ -72,3 +72,7 @@ hr {
 .flow > * + * {
   margin-top: var(--flow-space);
 }
+
+ul.flow {
+  --flow-space: 2rem;
+}

@@ -9,7 +9,7 @@
 <section>
   <h2>Latest posts</h2>
   <ul class="flow">
-    {% for item in collections.posts %}
+    {% for item in collections.posts | reverse %}
       <li>
         <article>
           <h3>
