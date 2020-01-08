@@ -4,38 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{ page.title }}</title>
+  <title>{% block pageTitle %}{{ title }}{% endblock %}</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}ul[class],ol[class]{padding:0}body,h1,h2,h3,h4,p,ul[class],ol[class],li,figure,figcaption,blockquote,dl,dd{margin:0}body{min-height:100vh;scroll-behavior:smooth;text-rendering:optimizeSpeed;line-height:1.5}ul[class],ol[class]{list-style:none}a:not([class]){text-decoration-skip-ink:auto}img{max-width:100%;display:block}article>*+*{margin-top:1em}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+    {% include "css/global.css" %}
+  </style>
 </head>
 <body>
-  <header role="banner" class="site-head">
+  <main>
     <div class="wrapper">
-      <p>Andy’s Micro Blog</p>
-      {% if navigation.items %}
-        <nav class="nav">
-          <ul>
-            {% for item in navigation.items %}
-              {% set relAttribute = '' %}
-              {% set currentAttribute = '' %}
-
-              {% if item.rel %}
-                {% set relAttribute = ' rel="' + item.rel + '"' %}
-              {% endif %}
-
-              {% if page.url == item.url %}
-                {% set currentAttribute = ' aria-current="page"' %}
-              {% endif %}
-
-              <li>
-                <a href="{{ item.url }}"{{ relAttribute | safe }}{{ currentAttribute | safe }}>{{ item.text }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </nav>
-      {% endif %}
+      {% block content %}{% endblock %}
     </div>
-  </header>
-  <main class="wrapper">
-    {% block content %}{% endblock %}
   </main>
+  <footer role="contentinfo">
+    <div class="wrapper">
+      <hr />
+      <p>Andy Bell | <a href="//hankchizljaw.com">Website</a> | <a rel="me" href="//twitter.com/hankchizljaw">Twitter</a></p>
+    </div>
+  </footer>
 </body>
 </html>

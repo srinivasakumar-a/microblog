@@ -1,0 +1,73 @@
+body {
+  background: #efefef;
+  color: #252525;
+  padding: 2rem 1.5rem;
+  font-family: Georgia;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: auto;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+h2 {
+  font-size: 2.1rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+  font-weight: normal;
+}
+
+h2,
+h3 {
+  margin-bottom: 1em;
+}
+
+a {
+  color: currentColor;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+:focus {
+  outline: 1px solid currentColor;
+  outline-offset: 0.25rem;
+}
+
+article {
+  font-size: 1.2rem;
+}
+
+hr {
+  margin: 2.5rem auto;
+  max-width: 40rem;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.wrapper {
+  max-width: 55rem;
+  margin: 0 auto;
+}
+
+.flow {
+  --flow-space: 1em;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space);
+}

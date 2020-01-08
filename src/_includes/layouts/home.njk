@@ -1,25 +1,24 @@
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-<div class="flow">
-  <article>
-    <h1>{{ title }}</h1>
-    {{ content | safe }}
-  </article>
-  <section>
-    <h2>Latest posts</h2>
-    <ul class="flow">
-      {% for item in collections.posts %}
-        <li>
-          <article>
-            <h3>
-              <a href="{{ item.url }}" rel="bookmark">{{ item.data.title | dateFilter }}</a>
-            </h3>
-            {{ item.templateContent | safe }}
-          </article>
-        </li>
-      {% endfor %}
-    </ul>
-  </section>
-</div>
+<article>
+  <h1>{{ title }}</h1>
+  {{ content | safe }}
+</article>
+<hr />
+<section>
+  <h2>Latest posts</h2>
+  <ul class="flow">
+    {% for item in collections.posts %}
+      <li>
+        <article>
+          <h3>
+            <a href="{{ item.url }}" rel="bookmark">{{ item.data.title | dateFilter }}</a>
+          </h3>
+          {{ item.templateContent | safe }}
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
 {% endblock %}
