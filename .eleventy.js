@@ -13,6 +13,9 @@ module.exports = function(config) {
 
   // Plugins
   config.addPlugin(rssPlugin);
+  
+  // Pass through
+  config.addPassthroughCopy('src/_redirects');
 
   return {
     dir: {

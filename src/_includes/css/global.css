@@ -76,3 +76,36 @@ hr {
 ul.flow {
   --flow-space: 2rem;
 }
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.pagination > * {
+  display: inline-flex;
+  align-items: center;
+  margin: 0.8rem 0 0 0;
+}
+
+.pagination > [data-direction='backwards'] svg {
+  transform: rotate(-180deg);
+  transform-origin: center;
+}
+
+.pagination > [data-direction='forwards'] {
+  margin-left: auto;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
