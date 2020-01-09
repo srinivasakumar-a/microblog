@@ -1,0 +1,13 @@
+<ul class="flow">
+  {% for item in pagination.items %}
+    <li>
+      <article>
+        <h3>
+          <a href="{{ item.url }}" rel="bookmark">{{ item.data.title | dateFilter }}</a>
+        </h3>
+        {{ item.templateContent | safe }}
+      </article>
+    </li>
+  {% endfor %}
+</ul>
+

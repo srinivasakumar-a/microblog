@@ -1,0 +1,37 @@
+{% extends 'layouts/base.njk' %}
+{% if pagination.pageNumber > 0 %}
+  {% set paginationPrevUrl %}/archive/{{ pagination.pageNumber - 1 }}{% endset %}
+{% endif %}
+
+{% if pagination.nextPageHref %}
+  {% set paginationNextUrl = pagination.nextPageHref %}
+{% endif %}
+{% block content %}
+<article>
+  <h1>{{ title }}</h1>
+  {{ content | safe }}
+</article>
+<hr />
+<section>
+  <h2 class="visually-hidden">Posts, page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</h2>
+  {% include "partials/post-list.njk" %}
+  {% if paginationNextUrl or paginationPrevUrl %}
+    <hr />
+    <footer class="pagination">
+      {% if paginationPrevUrl %}
+        <a href="{{ paginationPrevUrl }}" data-direction="backwards" class="button">
+          {% include "icons/arrow.svg" %}
+          <span>{{ paginationPrevText if paginationPrevText else 'Newer posts' }}</span>
+        </a>
+      {% endif %}
+      {% if paginationNextUrl %}
+        <a href="{{ paginationNextUrl }}" data-direction="forwards" class="button">
+          <span>{{ paginationNextText if paginationNextText else 'Older posts' }}</span>
+          {% include "icons/arrow.svg" %}
+        </a>
+      {% endif %}
+    </footer>
+  {% endif %}
+</section>
+{% endblock %}
+
