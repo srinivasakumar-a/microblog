@@ -2,7 +2,7 @@
 title: 'Andy’s Micro Blog'
 layout: 'layouts/archive.njk'
 pagination:
-  data: collections.posts
+  data: collections.items
   size: 5
   reverse: true
 permalink: archive/{{ pagination.pageNumber }}/index.html
