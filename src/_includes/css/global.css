@@ -7,6 +7,13 @@ body {
   flex-direction: column;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #efefef;
+    background: #252525;
+  }
+}
+
 main {
   flex: auto;
 }
