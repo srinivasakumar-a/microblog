@@ -18,7 +18,7 @@ permalink: '/feed.xml'
   <entry>
     <title>{{ item.data.title | dateFilter }}</title>
     <link href="{{ absolutePostUrl }}"/>
-    <updated>{{ item.date | rssDate }}</updated>
+    <updated>{{ item.data.title | w3DateFilter }}</updated>
     <id>{{ absolutePostUrl }}</id>
     <content type="html"><![CDATA[
       {{ item.templateContent | safe }}
