@@ -2,11 +2,11 @@
   --color-text: #351503;
   --color-green: #7c897e;
   --color-stone: #d9cdc1;
-  --color-stone-dark: #c2a99a;
+  --color-stone-dark: #d3c5b6;
   --color-copper: #853508;
   --flow-space: var(--step-2);
   --metric-box-padding: var(--step-4) var(--step-2);
-  --metric-max-width: 55rem;
+  --metric-max-width: 50rem;
 
   --fluid-min-width: 320;
   --fluid-max-width: 768;
@@ -80,15 +80,23 @@
   );
 }
 
+@font-face {
+  font-family: 'martelheavy';
+  src: url('/fonts/martel-black-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   color: var(--color-text);
-  background: var(--color-stone);
+  background: var(--color-stone) url('/images/noise.png');
   font-size: 1.4rem;
   font-family: Georgia, serif;
 }
 
 body,
-main {
+main,
+.wrapper {
   display: flex;
   flex-direction: column;
 }
@@ -100,12 +108,13 @@ main,
 
 a {
   text-decoration-color: var(--color-text);
+  text-decoration-thickness: 1px;
 }
 
 h1,
 h2,
 h3 {
-  font-family: 'Martel', Georgia, serif;
+  font-family: 'martelheavy', Georgia, serif;
   line-height: 1.1;
 }
 
@@ -131,7 +140,7 @@ h1 a {
 }
 
 h3 a {
-  text-decoration-color: var(--color-copper);
+  text-decoration-color: var(--color-green);
 }
 
 abbr {
@@ -158,6 +167,12 @@ a:hover {
   text-decoration: none;
 }
 
+blockquote {
+  padding: var(--step-1);
+  border-left: 0.25rem solid var(--color-green);
+  font-style: italic;
+}
+
 footer[role='contentinfo'] {
   max-width: calc(var(--metric-max-width) + 1px);
   border-right: 1px solid;
@@ -182,12 +197,14 @@ footer[role='contentinfo'] {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  border-top: 1px solid;
+  padding: var(--step-2);
+  background: var(--color-stone-dark);
 }
 
 .pagination > * {
   display: inline-flex;
   align-items: center;
-  margin: 0.8rem 0 0 0;
 }
 
 .pagination > [data-direction='backwards'] svg {
@@ -214,6 +231,7 @@ footer[role='contentinfo'] {
 
 .post {
   padding: var(--metric-box-padding);
+  flex: auto;
 }
 
 .visually-hidden {
