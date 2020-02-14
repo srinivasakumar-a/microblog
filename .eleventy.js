@@ -20,6 +20,7 @@ module.exports = function(config) {
 
   // Pass through
   config.addPassthroughCopy('src/_redirects');
+  config.addPassthroughCopy('src/images');
 
   // Add custom collection for items
   config.addCollection('items', collection => {

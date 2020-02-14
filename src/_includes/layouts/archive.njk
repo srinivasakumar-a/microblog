@@ -7,16 +7,14 @@
   {% set paginationNextUrl = pagination.nextPageHref %}
 {% endif %}
 {% block content %}
-<article>
+<article class="[ intro ] [ flow ]">
   <h1><a href="/archive/0">{{ title }}</a></h1>
   {{ content | safe }}
 </article>
-<hr />
 <section>
   <h2 class="visually-hidden">Posts, page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</h2>
   {% include "partials/post-list.njk" %}
   {% if paginationNextUrl or paginationPrevUrl %}
-    <hr />
     <footer class="pagination">
       {% if paginationPrevUrl %}
         <a href="{{ paginationPrevUrl }}" data-direction="backwards" class="button">
