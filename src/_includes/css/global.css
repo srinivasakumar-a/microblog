@@ -108,7 +108,7 @@ main,
 
 a {
   text-decoration-color: var(--color-text);
-  text-decoration-thickness: 0.25rem;
+  text-decoration-thickness: 0.15rem;
 }
 
 h1,
