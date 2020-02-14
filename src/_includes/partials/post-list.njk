@@ -1,7 +1,7 @@
-<ul class="flow">
+<ul class="feed">
   {% for item in pagination.items %}
-    <li>
-      <article>
+    <li class="feed__item">
+      <article class="flow">
         <h3>
           <a href="{{ item.url }}" rel="bookmark">{{ item.data.title | dateFilter }}</a>
         </h3>

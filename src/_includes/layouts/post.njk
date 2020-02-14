@@ -2,14 +2,18 @@
 
 {% block pageTitle %}{{ title | dateFilter }}{% endblock %}
 {% block content %}
-<article>
-  <h1>
-    {{ title | dateFilter }}
-  </h1>
-  {{ content | safe }}
-  <hr />
-  <p>
-    <a href="/">Back to home</a>
-  </p>
-</article>
+<div class="wrapper">
+  <article class="post">
+    <h1>
+      {{ title | dateFilter }}
+    </h1>
+    {{ content | safe }}
+  </article>
+  <div class="pagination">
+    <a href="/archive/0" data-direction="backwards" class="button">
+      {% include "icons/arrow.svg" %}
+      <span>Back to home</span>
+    </a>
+  </div>
+</div>
 {% endblock %}
