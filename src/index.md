@@ -1,5 +1,5 @@
 ---
-title: 'HankChizlJaw’s Micro Blog'
+title: 'Andy’s Micro Blog'
 layout: 'layouts/archive.njk'
 pagination:
   data: collections.items
