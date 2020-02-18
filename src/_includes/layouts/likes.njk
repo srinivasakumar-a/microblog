@@ -13,7 +13,7 @@
     {{ content | safe }}
   </article>
   <section>
-    <h2 class="visually-hidden">Posts, page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</h2>
+    <h2 class="visually-hidden">Likes, page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</h2>
     <ul class="feed">
       {% for item in pagination.items %}
         <li class="feed__item">
