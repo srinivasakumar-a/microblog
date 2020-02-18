@@ -167,6 +167,11 @@ a:hover {
   text-decoration: none;
 }
 
+hr {
+  border: none;
+  border-top: 1px solid;
+}
+
 blockquote {
   padding: var(--step-1);
   border-left: 0.25rem solid var(--color-green);
