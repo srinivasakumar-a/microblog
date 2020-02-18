@@ -117,6 +117,7 @@ h2,
 h3 {
   font-family: 'martelheavy', Georgia, serif;
   line-height: 1.2;
+  font-weight: normal;
 }
 
 h1 {
@@ -150,13 +151,6 @@ abbr {
 
 article > * {
   max-width: 45ch;
-}
-
-h1,
-h2,
-h3 {
-  line-height: 1.1;
-  font-weight: normal;
 }
 
 a {
