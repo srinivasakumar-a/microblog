@@ -109,13 +109,14 @@ main,
 a {
   text-decoration-color: var(--color-text);
   text-decoration-thickness: 0.15rem;
+  text-underline-offset: 0.15rem;
 }
 
 h1,
 h2,
 h3 {
   font-family: 'martelheavy', Georgia, serif;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 h1 {
