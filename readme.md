@@ -4,4 +4,4 @@ This is an [Eleventy](//11ty.dev) powered site, so the first thing you need to d
 
 To run it locally, run `npm start`.
 
-If you’re deploying to [Netlify](//netlify.com), it’s all covered for you via a `netlify.toml` file.
+If you’re deploying to [Netlify](//netlify.com), set the build command to `eleventy` and the output directory to `dist`
