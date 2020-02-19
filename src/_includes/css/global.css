@@ -109,13 +109,15 @@ main,
 a {
   text-decoration-color: var(--color-text);
   text-decoration-thickness: 0.15rem;
+  text-underline-offset: 0.15rem;
 }
 
 h1,
 h2,
 h3 {
   font-family: 'martelheavy', Georgia, serif;
-  line-height: 1.1;
+  line-height: 1.2;
+  font-weight: normal;
 }
 
 h1 {
@@ -151,13 +153,6 @@ article > * {
   max-width: 45ch;
 }
 
-h1,
-h2,
-h3 {
-  line-height: 1.1;
-  font-weight: normal;
-}
-
 a {
   color: var(--color-copper);
   word-break: break-word;
@@ -165,6 +160,11 @@ a {
 
 a:hover {
   text-decoration: none;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid;
 }
 
 blockquote {
